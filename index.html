@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14171b" />
+  <meta name="description"
+    content="6S Digital Workspace — akses cepat seluruh aplikasi dan database 6S dalam satu dashboard." />
+  <title>6S Digital Workspace | Link Hub</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1.4" />
+      <rect x="14" y="3" width="7" height="7" rx="1.4" />
+      <rect x="3" y="14" width="7" height="7" rx="1.4" />
+      <rect x="14" y="14" width="7" height="7" rx="1.4" />
+    </symbol>
+    <symbol id="i-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v7c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12v7c0 1.66 3.58 3 8 3s8-1.34 8-3v-7" />
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c3 3 4.5 6 4.5 9S15 18 12 21M12 3c-3 3-4.5 6-4.5 9S9 18 12 21" />
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path d="M13 5h6v6M19 5l-9 9" />
+      <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m16 16 4 4" />
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14" />
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="m12 3 2.75 5.6 6.2.9-4.48 4.37 1.06 6.17L12 17.13l-5.53 2.91 1.06-6.17L3.05 9.5l6.2-.9z" />
+    </symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24">
+      <path
+        d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3zM19 17l.65 2.35L22 20l-2.35.65L19 23l-.65-2.35L16 20l2.35-.65L19 17z" />
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14m-6-6 6 6-6 6" />
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="m9 6 6 6-6 6" />
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24">
+      <path d="M3 12h4l3-7 4 14 3-7h4" />
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 3 20 6v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6z" />
+      <path d="m9 12 2 2 4-4" />
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 24 24">
+      <path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2V5zM4 18a2 2 0 0 1 2-2h14" />
+    </symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24">
+      <rect x="5" y="5" width="14" height="16" rx="2" />
+      <path d="M9 5V3h6v2M9 11h6M9 15h6" />
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M7 3v4M17 3v4M3 10h18" />
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6M17 14c2.5 0 4 1.7 4 4v2" />
+    </symbol>
+    <symbol id="i-image" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <path d="m3 17 5-5 4 4 3-3 6 6" />
+    </symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24">
+      <path d="m3 17 6-6 4 4 8-8M15 7h6v6" />
+    </symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24">
+      <path d="m16 4 4 4L9 19H5v-4L16 4zM14 6l4 4" />
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6" />
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M5 5l14 14M19 5 5 19" />
+    </symbol>
+    <symbol id="i-down" viewBox="0 0 24 24">
+      <path d="m6 9 6 6 6-6" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" />
+    </symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24">
+      <path d="M12 17V5m-5 5 5-5 5 5M4 17v4h16v-4" />
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <path d="M20 7V3h-4M4 17v4h4" />
+      <path d="M5 9a8 8 0 0 1 14-2l1 0M19 15A8 8 0 0 1 5 17H4" />
+    </symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24">
+      <path d="M4 6h16M7 12h10M10 18h4" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <path
+        d="M10 13a5 5 0 0 0 7.6.6l2.1-2.1a5 5 0 0 0-7.1-7.1l-2.1 2.1M14 11a5 5 0 0 0-7.6-.6l-2.1 2.1a5 5 0 0 0 7.1 7.1l2.1-2.1" />
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v6M12 7v1" />
+    </symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="14" rx="2" />
+      <path d="M8 22h8M12 18v4" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m4 12 5 5L20 6" />
+    </symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigasi utama">
+      <div class="brand-wrap">
+        <div class="brand-mark" aria-hidden="true"><span>6<span class="brand-s">S</span></span></div>
+        <div class="brand-copy"><strong>6S CULTURE</strong><span>DIGITAL WORKSPACE</span></div>
+      </div>
+      <div class="sidebar-section-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Kategori link">
+        <button class="nav-item is-active" data-tab="web" type="button" aria-current="page">
+          <svg class="icon">
+            <use href="#i-grid" />
+          </svg><span>Web & Aplikasi</span><span class="nav-count" id="nav-web-count">6</span>
+        </button>
+        <button class="nav-item" data-tab="sheet" type="button">
+          <svg class="icon">
+            <use href="#i-database" />
+          </svg><span>Sheet Database</span><span class="nav-count" id="nav-sheet-count">9</span>
+        </button>
+      </nav>
+      <div class="sidebar-separator"></div>
+      <div class="sidebar-section-label pinned-header"><span>AKSES FAVORIT</span><svg class="icon icon-sm">
+          <use href="#i-star" />
+        </svg></div>
+      <div class="pinned-links" id="pinned-links">
+        <div class="pinned-empty">Belum ada favorit. Klik ikon bintang pada kartu.</div>
+      </div>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note">
+        <div class="sidebar-note-icon"><svg class="icon">
+            <use href="#i-shield" />
+          </svg></div>
+        <strong>One place. All 6S tools.</strong>
+        <p>Seluruh akses 6S tersusun rapi dan siap digunakan.</p>
+        <div class="note-divider"></div>
+        <span class="live-dot"></span><span>Workspace ready</span>
+      </div>
+      <div class="sidebar-version">6S Digital Workspace <span>v1.0</span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><svg class="icon icon-xs">
+            <use href="#i-chevron" />
+          </svg><strong id="crumb-current">Web & Aplikasi</strong></div>
+        <div class="topbar-right">
+          <div class="today-pill"><svg class="icon icon-sm">
+              <use href="#i-calendar" />
+            </svg><span id="today-label">Hari ini</span></div>
+          <div class="tool-menu-wrap">
+            <button class="icon-button outline-button" id="tools-toggle" type="button"
+              aria-label="Opsi pengelolaan link" aria-expanded="false" title="Backup dan pengaturan"><svg class="icon">
+                <use href="#i-menu" />
+              </svg></button>
+            <div class="tools-popover" id="tools-popover" hidden>
+              <button type="button" id="export-btn"><svg class="icon icon-sm">
+                  <use href="#i-download" />
+                </svg> Export link (JSON)</button>
+              <button type="button" id="import-btn"><svg class="icon icon-sm">
+                  <use href="#i-upload" />
+                </svg> Import link (JSON)</button>
+              <div class="popover-separator"></div>
+              <button type="button" id="restore-btn" class="danger-text"><svg class="icon icon-sm">
+                  <use href="#i-refresh" />
+                </svg> Reset ke link awal</button>
+            </div>
+          </div>
+          <button type="button" class="button button-dark top-add" id="top-add-link"><svg class="icon icon-sm">
+              <use href="#i-plus" />
+            </svg><span>Tambah Link</span></button>
+        </div>
+      </header>
+
+      <div class="content-container">
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-noise"></div>
+          <div class="hero-content">
+            <div class="eyebrow"><span class="eyebrow-line"></span>6S CENTRAL ACCESS HUB <span class="eyebrow-number">/
+                2026</span></div>
+            <h1 id="hero-heading">Semua akses 6S.<br /><span>Satu ruang kerja.</span></h1>
+            <p>Kelola tautan aplikasi, monitoring, mentoring, dan database 6S dalam satu dashboard yang lebih cepat dan
+              terorganisir.</p>
+            <div class="hero-actions">
+              <button id="hero-explore" class="button button-light" type="button">Jelajahi Link <svg
+                  class="icon icon-sm">
+                  <use href="#i-arrow" />
+                </svg></button>
+              <span class="hero-status"><span class="live-dot"></span> Link workspace aktif</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-outer"></div>
+            <div class="orbit orbit-middle"></div>
+            <div class="orbit orbit-inner"></div>
+            <div class="hero-art-card"><span>6<span>S</span></span><small>CULTURE</small></div>
+            <span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span>
+            <span class="hero-art-caption">MANAGE · IMPROVE · SUSTAIN</span>
+          </div>
+          <div class="hero-bottom-number" aria-hidden="true">01 / 02</div>
+        </section>
+
+        <section class="stats-row" aria-label="Ringkasan workspace">
+          <div class="stat-card">
+            <div class="stat-icon"><svg class="icon">
+                <use href="#i-link" />
+              </svg></div>
+            <div class="stat-copy"><span>TOTAL LINK</span>
+              <div class="stat-number" id="stat-total">15</div>
+            </div><span class="stat-foot">TERHUBUNG <svg class="icon icon-xs">
+                <use href="#i-arrow" />
+              </svg></span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><svg class="icon">
+                <use href="#i-monitor" />
+              </svg></div>
+            <div class="stat-copy"><span>WEB & APLIKASI</span>
+              <div class="stat-number" id="stat-web">06</div>
+            </div><span class="stat-foot">APPS</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><svg class="icon">
+                <use href="#i-database" />
+              </svg></div>
+            <div class="stat-copy"><span>SHEET DATABASE</span>
+              <div class="stat-number" id="stat-sheet">09</div>
+            </div><span class="stat-foot">SHEETS</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><svg class="icon">
+                <use href="#i-star" />
+              </svg></div>
+            <div class="stat-copy"><span>FAVORIT</span>
+              <div class="stat-number" id="stat-favorites">00</div>
+            </div><span class="stat-foot">AKSES CEPAT</span>
+          </div>
+        </section>
+
+        <section class="library-section" id="library" aria-labelledby="library-title">
+          <div class="library-title-row">
+            <div><span class="section-kicker">LINK DIRECTORY <span>— / 01</span></span>
+              <h2 id="library-title">Web & Aplikasi</h2>
+              <p id="library-subtitle">Akses langsung ke seluruh aplikasi dan dashboard 6S.</p>
+            </div>
+            <div class="library-count"><span class="count-dot"></span><strong id="result-count">6</strong> tautan
+              tersedia</div>
+          </div>
+          <div class="toolbar">
+            <label class="search-field" for="search-input"><svg class="icon">
+                <use href="#i-search" />
+              </svg><input id="search-input" type="search" autocomplete="off"
+                placeholder="Cari nama aplikasi, kategori, atau database..." /><span
+                class="search-shortcut">/</span></label>
+            <button class="button button-filter" id="favorites-only" type="button" aria-pressed="false"><svg
+                class="icon icon-sm">
+                <use href="#i-star" />
+              </svg><span>Favorit</span></button>
+            <label class="sort-field" for="sort-select"><svg class="icon icon-sm">
+                <use href="#i-filter" />
+              </svg><select id="sort-select" aria-label="Urutkan link">
+                <option value="default">Urutan awal</option>
+                <option value="name">Nama A–Z</option>
+                <option value="favorites">Favorit dulu</option>
+              </select><svg class="icon icon-xs">
+                <use href="#i-down" />
+              </svg></label>
+          </div>
+          <div class="filter-strip" id="category-filters" role="group" aria-label="Filter kategori"></div>
+          <div class="link-grid" id="link-grid" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <div class="empty-icon"><svg class="icon">
+                <use href="#i-search" />
+              </svg></div>
+            <h3>Tidak ada link ditemukan</h3>
+            <p>Coba gunakan kata kunci atau filter yang berbeda.</p><button class="button button-dark" type="button"
+              id="reset-filter">Hapus Filter</button>
+          </div>
+        </section>
+        <footer class="page-footer"><span>© <span id="copyright-year">2026</span> 6S Culture. Digital
+            Workspace.</span><span><span class="footer-pulse"></span> Organized for better work . zi😎.</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="link-dialog" class="modal" aria-labelledby="dialog-title">
+    <form id="link-form" novalidate>
+      <div class="modal-header">
+        <div><span class="section-kicker">WORKSPACE / MANAGE</span>
+          <h2 id="dialog-title">Tambah Link</h2>
+          <p>Simpan akses baru ke workspace 6S.</p>
+        </div><button class="icon-button modal-close" type="button" id="close-dialog" aria-label="Tutup"><svg
+            class="icon">
+            <use href="#i-x" />
+          </svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="field"><label for="link-name">Nama link <span>*</span></label><input id="link-name" name="name"
+            maxlength="80" required placeholder="Contoh: Dashboard Inspeksi 6S" /></div>
+        <div class="field"><label for="link-url">Alamat URL <span>*</span></label><input id="link-url" name="url"
+            type="url" maxlength="2048" required placeholder="https://..." /></div>
+        <div class="form-row">
+          <div class="field"><label for="link-type">Jenis link <span>*</span></label><select id="link-type" name="type">
+              <option value="web">Web & Aplikasi</option>
+              <option value="sheet">Sheet Database</option>
+            </select></div>
+          <div class="field"><label for="link-category">Kategori</label><input id="link-category" name="category"
+              maxlength="28" placeholder="Contoh: Monitoring" /></div>
+        </div>
+        <div class="field"><label for="link-description">Deskripsi singkat</label><textarea id="link-description"
+            name="description" rows="3" maxlength="180" placeholder="Jelaskan fungsi link ini..."></textarea></div>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <div class="form-notice"><svg class="icon icon-sm">
+            <use href="#i-info" />
+          </svg><span>Perubahan tersimpan di browser ini. Untuk perubahan bersama di GitHub, edit daftar bawaan pada
+            <code>app.js</code> dan terbitkan ulang.</span></div>
+      </div>
+      <div class="modal-footer"><button type="button" class="button button-ghost"
+          id="cancel-dialog">Batal</button><button type="submit" class="button button-dark"><svg class="icon icon-sm">
+            <use href="#i-check" />
+          </svg><span id="submit-label">Simpan Link</span></button></div>
+    </form>
+  </dialog>
+  <dialog id="confirm-dialog" class="modal confirm-modal" aria-labelledby="confirm-title">
+    <div class="confirm-body">
+      <div class="confirm-icon"><svg class="icon">
+          <use href="#i-info" />
+        </svg></div>
+      <h2 id="confirm-title">Konfirmasi</h2>
+      <p id="confirm-message"></p>
+      <div class="confirm-actions"><button type="button" class="button button-ghost"
+          id="confirm-cancel">Batal</button><button type="button" class="button button-danger" id="confirm-ok">Ya,
+          lanjutkan</button></div>
+    </div>
+  </dialog>
+  <input type="file" id="import-file" accept=".json,application/json" hidden />
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+
+</html>
